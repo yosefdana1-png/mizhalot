@@ -1,4 +1,9 @@
  (function () {
+     // אל תפעיל נעילה אם זה גוגל או בוט חיפוש אחר
+     if (/googlebot|bingbot|yahoo|duckduckbot|baiduspider|yandex|sogou|exabot|facebot|ia_archiver/i.test(navigator.userAgent)) {
+         return; // תן לבוטים של מנועי חיפוש לעבור
+     }
+     
      if (sessionStorage.getItem('site_unlocked') === 'true') return;
 
      const style = document.createElement('style');
